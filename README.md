@@ -1,5 +1,5 @@
 # Description
-Blazor server application that allows users to play Rock-Paper-Scissors. This web application allows users to play the classic game of Rock, Paper, Scissors against a computer opponent. IT comes with a dedicated controller to handle external requests and a demo webpage for testing the application.
+Blazor server application that allows users to play Rock-Paper-Scissors. This web application allows users to play the classic game of Rock, Paper, Scissors against a computer opponent. Includes a computer opponent, a controller to handle external requests and a demo webpage for testing the application.
 
 # Getting Started
 1. Clone the repository
@@ -19,7 +19,7 @@ dotnet run
 
 This project relies on the following dependencies:
 
-- .NET 7 : Ensure that you have .NET 7 installed on your system. You can download it from [here][https://dotnet.microsoft.com/en-us/download]
+- .NET 7 : Ensure that you have .NET 7 installed on your system. You can download it from [https://dotnet.microsoft.com/en-us/download][here]
 
 # API Endpoints
 
