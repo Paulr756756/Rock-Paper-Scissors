@@ -1,0 +1,114 @@
+**/.mono
+
+# Blazor / Visual Studio specific
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.vscode/
+.vs/
+*.sln.docstates
+
+# Blazor / ASP.NET artifacts
+*.suo
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.psess
+*.vsp
+*.vspx
+*.vssscc
+*.vspscc
+*.cache
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+*.pidb
+*.svclog
+*.suo
+*.tlb
+*.tlh
+*.user
+*.userosscache
+*.usr
+*.webtest
+*.xsc
+*.xss
+*.pubxml
+*.Publish.xml
+*.pfx
+*.publishsettings
+*.dll
+*.exe
+
+# Visual Studio Code specific
+.vscode/
+
+# Rider specific
+.idea/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.psess
+*.vsp
+*.vspx
+*.vssscc
+*.vspscc
+*.cache
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+*.pidb
+*.svclog
+*.suo
+*.tlb
+*.tlh
+*.user
+*.userosscache
+*.usr
+*.webtest
+*.xsc
+*.xss
+*.pubxml
+*.Publish.xml
+*.pfx
+*.publishsettings
+*.dll
+*.exe
+*.dat
+*.pfx
+*.snk
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+.history/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
