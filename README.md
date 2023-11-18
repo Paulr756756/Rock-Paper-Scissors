@@ -50,12 +50,12 @@ curl -X POST https://localhost:5001/api/post/session
 ```json
 {
     "sessionId":"550e8400-e29b-41d4-a716-446655440000",
-    "action":"2"
+    "action": 2 //1->Rock, 2->Paper, 3-> Scissor
 }
 ```
 - Example Request:
 ```bash
-curl curl -X POST https://localhost:5001/api/post/action
+curl -X POST https://localhost:5001/api/post/action
 ```
 - Response Body: Match results
 ```json
@@ -76,7 +76,7 @@ curl curl -X POST https://localhost:5001/api/post/action
 - Description: Gets the current session statistics.
 - Example Request:
 ```bash
-curl curl -X POST https://localhost:5001/api/get/stats?sessionId=550e8400-e29b-41d4-a716-446655440000
+curl -X POST https://localhost:5001/api/get/stats?sessionId=550e8400-e29b-41d4-a716-446655440000
 ```
 - Response Body:
 ```json
@@ -96,7 +96,7 @@ curl curl -X POST https://localhost:5001/api/get/stats?sessionId=550e8400-e29b-4
 - Description: Returns all the matches of a single session.
 - Example Request:
 ```bash
-curl curl -X POST https://localhost:5001/api/get/matches?sessionId=550e8400-e29b-41d4-a716-446655440000
+curl -X POST https://localhost:5001/api/get/matches?sessionId=550e8400-e29b-41d4-a716-446655440000
 ```
 - Response Body:
 ```json
@@ -131,8 +131,8 @@ curl curl -X POST https://localhost:5001/api/get/matches?sessionId=550e8400-e29b
 curl -X POST https://localhost:5001/api/delete/terminate?sessionId
 ```
 
-
-
 # Notes
+- The API follows **RESTful** conventions for simplicity and ease of use.
 - The game logic is implemented server side.
-- The API follows RESTful conventions for simplicity and ease of use.
+- **Frequency analysis** of User's previous actions is also done in order to introduce bias and increase difficulty.
+- The server uses an **in-memory store** to save user sessions.Sessions that remain inactive for more than a day are deleted automatically.
