@@ -1,4 +1,6 @@
 **/.mono
+**/.idea
+**/.vscode
 
 # Blazor / Visual Studio specific
 bin/
