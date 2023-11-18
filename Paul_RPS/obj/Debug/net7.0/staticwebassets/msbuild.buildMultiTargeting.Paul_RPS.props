@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/Paul_RPS.props" />
-</Project>
