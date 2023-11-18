@@ -1,0 +1,53 @@
+﻿@page "/"
+@using System.Net.Security
+@using Paul_RPS.Data
+@inject IGameService GameService
+
+<PageTitle>Index</PageTitle>
+
+<h1>Rock-Paper-Scissor Game</h1>
+<button @onclick="GameControl">@ButtonText</button>
+
+<h2>Make Your Choice</h2>
+
+<div style="display: flex;flex-flow: row; row-gap: 20px">
+    <button @onclick="() => SubmitUserAction(1)">Rock</button>
+    <button @onclick="() => SubmitUserAction(2)">Paper</button>
+    <button @onclick="() => SubmitUserAction(3)">Scissor</button>
+</div>
+
+<h3>Previous Match Results</h3>
+<table>
+    <tr>
+        <th>User Action</th>
+        <th>Computer Action</th>
+        <th>User Won</th>
+        <th>Draw</th>
+    </tr>
+    @foreach(var match in Matches){
+        <tr>
+            <td>@match.UserAction</td>
+            <td>@match.ComputerAction</td>
+            <td>@match.UserWon</td>
+            <td>@match.IsDraw</td>
+        </tr>
+    }
+</table>
+
+<div style="display: flex; justify-items: center; align-content: center">
+    <button @onclick="GetMatches">Refresh previous results</button>
+</div>
+
+<h3>Current Session Statistics</h3>
+<table>
+    <tr>
+        <th>Wins</th>
+        <th>Losses</th>
+        <th>Draws</th>
+    </tr>
+    <tr>
+        <td>@Stats.Wins</td>
+        <td>@Stats.Losses</td>
+        <td>@Stats.Draws</td>
+    </tr>
+</table>
