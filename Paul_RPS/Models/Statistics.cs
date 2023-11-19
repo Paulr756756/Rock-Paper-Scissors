@@ -1,5 +1,8 @@
 namespace Paul_RPS.Models;
 
+/// <summary>
+/// Session statistics
+/// </summary>
 public class Statistics
 {
     public int Wins { get; set; }

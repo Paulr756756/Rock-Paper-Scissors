@@ -128,7 +128,7 @@ curl -X POST https://localhost:5001/api/get/matches?sessionId=550e8400-e29b-41d4
 ```
 - Example Request:
 ```bash
-curl -X POST https://localhost:5001/api/delete/terminate?sessionId
+curl -X POST https://localhost:5001/api/delete/terminate
 ```
 
 # Notes

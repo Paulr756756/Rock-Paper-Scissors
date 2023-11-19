@@ -1,7 +1,8 @@
-﻿namespace Paul_RPS;
+﻿namespace Paul_RPS.Models;
 
 /// <summary>
-/// Maps the actions to their 
+/// Maps the actions to their integer counterparts
+/// Describes an action.
 /// </summary>
 public enum Action
 {

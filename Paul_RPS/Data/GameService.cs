@@ -1,13 +1,14 @@
 ﻿using System.Diagnostics;
 using Paul_RPS.Models;
 using Paul_RPS.Models.RequestModels;
+using Action = Paul_RPS.Models.Action;
 
 namespace Paul_RPS.Data;
 
 public interface IGameService
 {
     public Session CreateSession();
-    Match ProcessMatch(SendActionRM request);
+    Match ProcessMatch(SendAction request);
     List<Match> GetPreviousMatches(Guid sessionId);
     Statistics GetCurrentSessionStats(Guid sessionId);
     void TerminateSession(Guid sessionId);
@@ -42,7 +43,7 @@ public class GameService : IGameService
     /// </summary>
     /// <param name="request">The SendAction Response Model</param>
     /// <returns>Match</returns>
-    public Match ProcessMatch(SendActionRM request)
+    public Match ProcessMatch(SendAction request)
     {
         var userAction = (Action)request.Action;
         var computerAction = GenerateComputerAction(request.SessionId);

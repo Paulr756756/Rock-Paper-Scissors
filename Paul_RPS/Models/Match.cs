@@ -1,7 +1,7 @@
 ﻿namespace Paul_RPS.Models;
 
 /// <summary>
-/// 
+/// Describes the results of a match b/w human and computer.
 /// </summary>
 public class Match
 {

@@ -48,7 +48,7 @@ partial class Index
         else
         {
             if (SessionId is null) return;
-            var request = new SendActionRM()
+            var request = new SendAction()
             {
                 SessionId = this.SessionId.Value,
                 Action = action

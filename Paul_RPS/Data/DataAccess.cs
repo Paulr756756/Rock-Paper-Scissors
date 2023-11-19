@@ -10,12 +10,8 @@ public interface IDataAccess
     Statistics GetStats(Guid sessionId);
     void AddMatchData(Match match, Guid sessionId);
     void ClearMemory();
-    void UpdateLastActivityTime(Guid sessionId);
 }
 
-/// <summary>
-/// Handles Access of Memory
-/// </summary>
 public class DataAccess : IDataAccess
 {
     private Dictionary<Guid, Session> _sessionsInMemory = new ();
@@ -30,6 +26,10 @@ public class DataAccess : IDataAccess
         sessionCleanupTimer = new Timer(PerformCleanupOperations, null, TimeSpan.Zero, TimeSpan.FromHours(1));
     }
 
+    /// <summary>
+    /// Saves session in the dictionary
+    /// </summary>
+    /// <param name="session">Session</param>
     public void SaveSession(Session session)
     {
         if(!_sessionsInMemory.TryAdd(session.Id, session)) 
@@ -37,6 +37,11 @@ public class DataAccess : IDataAccess
         else _logger.LogInformation($"New session created with id: {session.Id}.");
     }
 
+    /// <summary>
+    /// Removes the session from the dictionary
+    /// </summary>
+    /// <param name="sessionId">The session id</param>
+    /// <exception cref="NotImplementedException">When session is not found</exception>
     public void DeleteSession(Guid sessionId)
     {
         if (!_sessionsInMemory.ContainsKey(sessionId))
@@ -47,6 +52,11 @@ public class DataAccess : IDataAccess
         _sessionsInMemory.Remove(sessionId);
     }
 
+    /// <summary>
+    /// Gets the list of matches in the session
+    /// </summary>
+    /// <param name="sessionId">The session id</param>
+    /// <returns>List of matches</returns>
     public List<Match> GetAllMatches(Guid sessionId)
     {
         var session = _sessionsInMemory.GetValueOrDefault(sessionId);
@@ -55,6 +65,12 @@ public class DataAccess : IDataAccess
         return session!.Matches;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sessionId"></param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
     public Statistics GetStats(Guid sessionId)
     {
         var session = _sessionsInMemory.GetValueOrDefault(sessionId);
@@ -67,6 +83,12 @@ public class DataAccess : IDataAccess
         return session.Statistics;
     }
     
+    /// <summary>
+    /// Add a new match to the session
+    /// </summary>
+    /// <param name="match">Match</param>
+    /// <param name="sessionId">The session id</param>
+    /// <exception cref="NotImplementedException">When session is not found</exception>
     public void AddMatchData(Match match, Guid sessionId)
     {
         var session = _sessionsInMemory.GetValueOrDefault(sessionId);
@@ -82,6 +104,9 @@ public class DataAccess : IDataAccess
         UpdateLastActivityTime(sessionId);
     }
 
+    /// <summary>
+    /// Clears the dictionary
+    /// </summary>
     public void ClearMemory()
     {
         _sessionsInMemory = new();
@@ -91,7 +116,7 @@ public class DataAccess : IDataAccess
     /// Updates the last activity time
     /// </summary>
     /// <param name="sessionId">The id of the session</param>
-    /// <exception cref="NotImplementedException">To handle session not found</exception>
+    /// <exception cref="NotImplementedException">When session is not found</exception>
     public void UpdateLastActivityTime(Guid sessionId)
     {
         var session = _sessionsInMemory.GetValueOrDefault(sessionId);
