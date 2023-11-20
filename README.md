@@ -19,7 +19,7 @@ dotnet run
 
 This project relies on the following dependencies:
 
-- .NET 7 : Ensure that you have .NET 7 installed on your system. You can download it from [https://dotnet.microsoft.com/en-us/download][here]
+- .NET 7 : Ensure that you have .NET 7 installed on your system. You can download it from [https://dotnet.microsoft.com/en-us/download]
 
 # API Endpoints
 
