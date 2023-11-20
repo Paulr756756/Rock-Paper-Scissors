@@ -32,7 +32,7 @@ This application has several API endpoints to handle game interactions
 - Description: Creates a new game session. Returns a session ID; use this Id to identify your game's session.
 - Example Request:
 ```bash
-curl -X POST https://localhost:5001/api/post/session
+curl -X POST http://localhost:5140/api/game/post/session
 ```
 - Response Body:
 ```json
@@ -55,7 +55,7 @@ curl -X POST https://localhost:5001/api/post/session
 ```
 - Example Request:
 ```bash
-curl -X POST https://localhost:5001/api/post/action
+curl -X POST http://localhost:5140/api/game/post/action
 ```
 - Response Body: Match results
 ```json
@@ -76,7 +76,7 @@ curl -X POST https://localhost:5001/api/post/action
 - Description: Gets the current session statistics.
 - Example Request:
 ```bash
-curl -X POST https://localhost:5001/api/get/stats?sessionId=550e8400-e29b-41d4-a716-446655440000
+curl -X POST http://localhost:5140/api/game/get/stats?sessionId=550e8400-e29b-41d4-a716-446655440000
 ```
 - Response Body:
 ```json
@@ -96,7 +96,7 @@ curl -X POST https://localhost:5001/api/get/stats?sessionId=550e8400-e29b-41d4-a
 - Description: Returns all the matches of a single session.
 - Example Request:
 ```bash
-curl -X POST https://localhost:5001/api/get/matches?sessionId=550e8400-e29b-41d4-a716-446655440000
+curl -X POST http://localhost:5140/api/game/get/matches?sessionId=550e8400-e29b-41d4-a716-446655440000
 ```
 - Response Body:
 ```json
@@ -128,7 +128,7 @@ curl -X POST https://localhost:5001/api/get/matches?sessionId=550e8400-e29b-41d4
 ```
 - Example Request:
 ```bash
-curl -X POST https://localhost:5001/api/delete/terminate
+curl -X POST http://localhost:5140/api/game/delete/terminate
 ```
 
 # Notes
